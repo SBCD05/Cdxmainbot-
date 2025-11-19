@@ -1,6 +1,8 @@
 requests
 pandas
-pandas-ta
 python-binance
 binance-connector
 websocket-client
+python-dotenv
+flask
+pandas_ta
