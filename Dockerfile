@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     g++ \
     libssl-dev \
     libffi-dev \
-    libatlas-base-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /app/requirements.txt
