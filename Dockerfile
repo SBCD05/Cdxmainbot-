@@ -15,6 +15,9 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
+# Install pandas_ta from GitHub (supports Python 3.11+)
+RUN pip install git+https://github.com/twopirllc/pandas-ta.git
+
 COPY . /app
 
 ENV PYTHONUNBUFFERED=1
