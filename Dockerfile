@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies required for pandas/numpy
+# Install system dependencies required for pandas, numpy, TA libs
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     gcc \
@@ -11,15 +11,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libffi-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Install python dependencies
 COPY requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# Install pandas_ta without git (zip method, supports Python 3.11+)
-RUN pip install https://github.com/twopirllc/pandas-ta/archive/refs/heads/main.zip
-
+# Copy project files
 COPY . /app
 
 ENV PYTHONUNBUFFERED=1
 
+# Run the main bot
 CMD ["python", "Mainrunbots.py"]
