@@ -16,7 +16,7 @@ RUN pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Install pandas_ta without git (zip method, supports Python 3.11+)
-RUN pip install https://github.com/twopirllc/pandas-ta/archive/refs/heads/master.zip
+RUN pip install https://github.com/twopirllc/pandas-ta/archive/refs/heads/main.zip
 
 COPY . /app
 
