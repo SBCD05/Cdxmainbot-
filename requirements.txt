@@ -5,4 +5,4 @@ binance-connector
 websocket-client
 python-dotenv
 flask
-pandas_ta==0.3.14b0
+pandas_ta
