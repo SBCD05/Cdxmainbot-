@@ -7,7 +7,10 @@ app = Flask(__name__)
 
 # Add bot folders to path
 current_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.join(current_dir, "ProjectDEX"))
+
+# Temporarily not using ProjectDEX folder; uncomment when ready
+# sys.path.append(os.path.join(current_dir, "ProjectDEX"))
+
 sys.path.append(os.path.join(current_dir, "Xrp_bot_code"))
 
 # Import the main function
